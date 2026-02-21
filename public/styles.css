@@ -1,0 +1,142 @@
+:root {
+  --bg-pink: #fce7f2;
+  --retro-blue: #3a6ea5;
+  --retro-teal: #00d9ff;
+  --retro-orange: #ff8c42;
+  --retro-lightorange: #ffd3b8;
+  --window-gray: #d4d0c8;
+  --window-border: #808080;
+}
+
+
+
+body {
+  margin: 0;
+  background: var(--bg-pink);
+  font-family: Verdana, sans-serif;
+}
+
+
+/* Desktop layout */
+/* .container {
+  display: flex;
+  flex-direction: row;
+} */
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+
+
+/* ===== Toolbar ===== */
+.toolbar {
+  background: linear-gradient(to right, var(--retro-orange), var(--retro-lightorange));
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.toolbar a {
+  color: rgb(0, 0, 0);
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toolbar a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Desktop ===== */
+.desktop {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* ===== Windows 2000 Box ===== */
+.window {
+  position: absolute;
+  background: var(--window-gray);
+  border: 2px solid var(--window-border);
+  box-shadow:
+    inset -1px -1px white,
+    inset 1px 1px #404040;
+  width: 300px;
+}
+
+.window-header {
+  background: linear-gradient(to right, var(--retro-orange), var(--retro-lightorange));
+  color: rgb(0, 0, 0);
+  padding: 6px 10px;
+  font-family: "Courier New", monospace;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.window-body {
+  background: white;
+  padding: 15px;
+}
+
+.window-body img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--retro-orange);
+}
+
+.window-body iframe {
+  width: 100%;
+  height: 200px;
+  border: 2px solid var(--retro-orange);
+}
+
+.center {
+  text-align: center;
+}
+
+/* ===== Random Desktop Positions ===== */
+
+.w1 { top: 20px; left: 80px; } 
+.w2 { top: 240px; left: 160px; }
+.w3 { top: 480px; left: 110px; }
+
+.w4 { top: 60px; right: 80px; }
+.w5 { top: 240px; right: 200px; }
+
+.w6 { top: 850px; left: 100px; width: 400px; }
+.w7 { top: 750px; right: 200px; width: 400px; }
+.w8 { top: 60px; left: 760px; width: 400px; }
+.w9 { top: 1150px; left: 80px; width: 400px; }
+
+.w10 { top: 700px; left: 760px; width: 400px; }
+
+.w11 { top: 1000px; left: 700px; width: 400px; }
+.w12 { top: 1050px; right: 250px; width: 400px; }
+
+
+/* ===== Subtle Vaporwave Touch ===== */
+.desktop::before {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background:
+    repeating-linear-gradient(
+      to top,
+      rgba(255,140,66,0.3),
+      rgba(255,140,66,0.3) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  pointer-events: none;
+}
