@@ -151,8 +151,8 @@
   .p1-self-image-placeholder {
     width: 100%;
     aspect-ratio: 4/3;
-    background: rgba(255,255,255,0.03);
-    border: 1px dashed var(--border);
+    /* background: rgba(255,255,255,0.03);
+    border: 1px dashed var(--border); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,8 +204,8 @@
   }
 
   .img-placeholder {
-    background: rgba(255,255,255,0.03);
-    border: 1px dashed var(--border);
+    /* background: rgba(255,255,255,0.03);
+    border: 1px dashed var(--border); */
     display: flex;
     align-items: center;
     justify-content: center;
