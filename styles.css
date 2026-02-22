@@ -251,6 +251,13 @@
     overflow: hidden;
   }
 
+    .scan-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    margin: 8px 0;
+    opacity: 0.4;
+  }
+
   .audio-label {
     font-size: 9px;
     letter-spacing: 0.15em;
@@ -258,12 +265,6 @@
     font-weight: 700;
     margin-bottom: 10px;
     text-transform: uppercase;
-  }
-
-  .sine-wave-container {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
   }
 
   .custom-audio {
@@ -429,14 +430,14 @@
     cursor: pointer;
     transition: background 0.2s;
     text-decoration: none;
-    color: inherit;
+    color: var(--cyan);
   }
   .yt-embed:hover { background: rgba(255,107,138,0.08); }
 
   .yt-icon {
     width: 40px;
     height: 40px;
-    border: 2px solid var(--pink);
+    border: 2px solid var(--cyan);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -445,7 +446,7 @@
   .yt-label {
     font-size: 9px;
     letter-spacing: 0.15em;
-    color: var(--pink);
+    color: var(--cyan);
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -468,8 +469,24 @@
 
   /* ANIMATIONS */
   @keyframes pulse-wave {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+    0%   { opacity: 0.35; filter: brightness(0.5); }
+    40%  { opacity: 1;    filter: brightness(1.4); }
+    60%  { opacity: 1;    filter: brightness(1.4); }
+    100% { opacity: 0.35; filter: brightness(0.5); }
+  }
+
+  @keyframes traverse {
+    0%   { stroke-dashoffset: 900; opacity: 0; }
+    5%   { opacity: 0.7; }
+    90%  { opacity: 0.7; }
+    100% { stroke-dashoffset: 0;   opacity: 0; }
+  }
+
+  @keyframes traverse-reverse {
+    0%   { stroke-dashoffset: 0;   opacity: 0; }
+    5%   { opacity: 0.5; }
+    90%  { opacity: 0.5; }
+    100% { stroke-dashoffset: 900; opacity: 0; }
   }
 
   @keyframes scroll-hint {
@@ -489,9 +506,29 @@
     letter-spacing: 0.2em;
   }
 
+  .sine-wave-container {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
   /* Sine wave animation */
   .sine-path {
-    animation: pulse-wave 2s ease-in-out infinite;
+    animation: pulse-wave 2.4s ease-in-out infinite;
+  }
+
+  /* Traversing thin line */
+  .sine-traverse {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: traverse 3.5s ease-in-out infinite;
+  }
+
+  .sine-traverse-2 {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 0;
+    animation: traverse-reverse 4.2s ease-in-out infinite;
+    animation-delay: 1.8s;
   }
 
   /* Corner marks */
